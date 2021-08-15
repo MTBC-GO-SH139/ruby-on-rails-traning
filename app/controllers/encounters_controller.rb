@@ -1,5 +1,6 @@
 class EncountersController < ApplicationController
   before_action :set_encounter, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /encounters or /encounters.json
   def index
