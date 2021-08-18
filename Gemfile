@@ -34,6 +34,8 @@ group :development, :test do
 
 #auth
 gem 'devise'
+#redis setup
+gem 'resque' 
 
 end
 

@@ -50,6 +50,7 @@ class PatientsController < ApplicationController
 
   # DELETE /patients/1 or /patients/1.json
   def destroy
+    Resque.enqueue(AddRandomPatients, 5)
     @patient.destroy
     respond_to do |format|
       format.html { redirect_to patients_url, notice: "Patient was successfully destroyed." }
